@@ -1,0 +1,336 @@
+/* ──── About Page ──── */
+.abt-page {
+    min-height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.abt-wrapper {
+    flex: 1;
+    padding-top: 120px;
+    width: min(var(--container-max), calc(100% - 2rem));
+    margin-inline: auto;
+    padding-bottom: 2rem;
+}
+
+.abt-page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+.abt-page-title h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+/* Hero Card */
+.abt-hero-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d7fc9 100%);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    margin-bottom: 1.25rem;
+    color: #fff;
+}
+
+.ahc-text h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.ahc-text h2 span {
+    opacity: 0.9;
+    display: block;
+}
+
+.ahc-text p {
+    margin: 0 0 1.5rem;
+    font-size: 0.92rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.ahc-actions {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.ahc-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.65rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: none;
+    background: #fff;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ahc-primary:hover {
+    background: #f5f5f5;
+}
+
+.ahc-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.65rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ahc-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Stats Row */
+.abt-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.abt-stat-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.as-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.as-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 4px;
+}
+
+.as-sub {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Section Card */
+.abt-section-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1.25rem;
+}
+
+.asc-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.85rem 1.15rem;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fcfcfc;
+    color: var(--text-primary);
+}
+
+.asc-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* Pillars Grid */
+.abt-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.abt-pillar {
+    padding: 1.25rem;
+    border-right: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.abt-pillar:last-child {
+    border-right: none;
+}
+
+.ap-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.65rem;
+}
+
+.abt-pillar h4 {
+    margin: 0 0 0.3rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.abt-pillar p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Timeline */
+.abt-timeline {
+    padding: 0.5rem 0;
+}
+
+.at-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.85rem 1.15rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.at-item:last-child {
+    border-bottom: none;
+}
+
+.at-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.at-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--background-color);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.at-content {
+    flex: 1;
+}
+
+.at-content h4 {
+    margin: 0 0 0.15rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.at-content p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* CTA Card */
+.abt-cta-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d7fc9 100%);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.abt-cta-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.abt-cta-card p {
+    margin: 0 auto 1.25rem;
+    max-width: 500px;
+    font-size: 0.88rem;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .abt-wrapper {
+        padding-top: 96px;
+        width: calc(100% - 1rem);
+    }
+
+    .abt-page-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .abt-stats {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .abt-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .abt-pillar {
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .abt-pillar:last-child {
+        border-bottom: none;
+    }
+
+    .abt-hero-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .ahc-text h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .abt-stats {
+        grid-template-columns: 1fr;
+    }
+}

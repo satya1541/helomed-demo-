@@ -1,0 +1,121 @@
+.retailer-shell {
+    display: flex;
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.retailer-sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+}
+
+.retailer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.retailer-brand img {
+    height: 40px;
+    width: 40px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 6px;
+}
+
+.retailer-brand h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.retailer-brand p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.retailer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.retailer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 12px;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.retailer-link:hover,
+.retailer-link.active {
+    background: rgba(148, 163, 184, 0.2);
+    color: #fff;
+}
+
+.retailer-logout {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: transparent;
+    color: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retailer-logout:hover {
+    background: rgba(148, 163, 184, 0.2);
+}
+
+.retailer-content {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    overflow-x: auto;
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .retailer-shell {
+        flex-direction: column;
+    }
+
+    .retailer-sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .retailer-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .retailer-content {
+        padding: 1.5rem;
+    }
+}

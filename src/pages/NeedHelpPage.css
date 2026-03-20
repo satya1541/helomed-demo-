@@ -1,0 +1,190 @@
+/* ──── Need Help Page ──── */
+.hlp-page {
+    min-height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.hlp-wrapper {
+    flex: 1;
+    padding-top: 120px;
+    width: min(var(--container-max), calc(100% - 2rem));
+    margin-inline: auto;
+    padding-bottom: 2rem;
+}
+
+.hlp-page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+}
+
+.hlp-page-title h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.hlp-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+}
+
+/* Layout */
+.hlp-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+/* Support Cards */
+.hlp-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hlp-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.15rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.2s;
+}
+
+.hlp-card.clickable {
+    cursor: pointer;
+}
+
+.hlp-card.clickable:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hc-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hc-info {
+    flex: 1;
+}
+
+.hc-info h3 {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hc-info p {
+    margin: 2px 0 0;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.hc-arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+/* FAQ Card */
+.hlp-faq-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+.hfq-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.85rem 1.15rem;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fcfcfc;
+    color: var(--text-primary);
+}
+
+.hfq-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.hfq-list {
+    padding: 0;
+}
+
+.hfq-item {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.hfq-item:last-child {
+    border-bottom: none;
+}
+
+.hfq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.85rem 1.15rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.hfq-question:hover {
+    background: #fafafa;
+}
+
+.hfq-item.open .hfq-question {
+    color: var(--primary-color);
+}
+
+.hfq-answer {
+    padding: 0 1.15rem 0.85rem;
+    overflow: hidden;
+}
+
+.hfq-answer p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .hlp-wrapper {
+        padding-top: 96px;
+        width: calc(100% - 1rem);
+    }
+
+    .hlp-page-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .hlp-layout {
+        grid-template-columns: 1fr;
+    }
+}

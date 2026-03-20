@@ -1,0 +1,164 @@
+/* ──── Home Page ──── */
+.home-page {
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.main-content {
+    width: 100%;
+}
+
+.home-sections-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Hero Visibility */
+.mobile-hero {
+    display: block;
+}
+
+.desktop-hero {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .mobile-hero {
+        display: none;
+    }
+
+    .desktop-hero {
+        display: block;
+    }
+}
+
+/* ──── Skincare Banner ──── */
+.skin-banner-section {
+    padding: 1.5rem 0;
+}
+
+.skin-banner-card {
+    background: linear-gradient(135deg, #e8ede8 0%, #d4e4d4 100%);
+    background-image: url('/images/skincare-banner-new.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: stretch;
+}
+
+.sbc-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 2.5rem;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sbc-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.sbc-content h2 {
+    margin: 0 0 0.5rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.15;
+}
+
+.sbc-content p {
+    margin: 0 0 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.sbc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius-full);
+    border: none;
+    background: var(--text-primary);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sbc-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sbc-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.4), transparent 60%);
+    z-index: 1;
+}
+
+/* ──── Responsive ──── */
+@media (max-width: 1024px) {
+    .home-sections-container {
+        padding: 0 20px;
+    }
+
+    .skin-banner-card {
+        min-height: 280px;
+    }
+
+    .sbc-content h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-sections-container {
+        padding: 0 12px;
+    }
+
+    .skin-banner-section {
+        padding: 1rem 0;
+    }
+
+    .skin-banner-card {
+        min-height: 220px;
+    }
+
+    .sbc-content {
+        padding: 1.25rem;
+    }
+
+    .sbc-content h2 {
+        font-size: 1.35rem;
+    }
+
+    .sbc-cta {
+        padding: 0.55rem 1.15rem;
+        font-size: 0.82rem;
+    }
+}

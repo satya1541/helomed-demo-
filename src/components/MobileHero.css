@@ -1,0 +1,227 @@
+/* ========================================
+   Mobile Hero — Pure CSS Premium Design
+   ======================================== */
+
+.mobile-hero {
+    position: relative;
+    min-height: 92dvh;
+    width: 100%;
+    background: linear-gradient(160deg, #0d9488 0%, #14b8a6 35%, #5eead4 70%, #ccfbf1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 0 40px;
+}
+
+/* ---- Decorative floating shapes ---- */
+.mobile-hero-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    background: white;
+}
+
+.shape-1 {
+    width: 220px;
+    height: 220px;
+    top: -40px;
+    right: -60px;
+    animation: floatShape 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 140px;
+    height: 140px;
+    bottom: 60px;
+    left: -40px;
+    opacity: 0.12;
+    animation: floatShape 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 80px;
+    height: 80px;
+    top: 35%;
+    right: 10%;
+    opacity: 0.1;
+    animation: floatShape 6s ease-in-out infinite 1s;
+}
+
+.shape-4 {
+    width: 50px;
+    height: 50px;
+    bottom: 25%;
+    right: 25%;
+    opacity: 0.08;
+    border-radius: 12px;
+    transform: rotate(45deg);
+    animation: floatShape 7s ease-in-out infinite 0.5s;
+}
+
+.shape-5 {
+    width: 100px;
+    height: 100px;
+    top: 15%;
+    left: 15%;
+    opacity: 0.1;
+    border-radius: 20px;
+    transform: rotate(30deg);
+    animation: floatShape 9s ease-in-out infinite 2s;
+}
+
+@keyframes floatShape {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+}
+
+/* ---- Content ---- */
+.mobile-hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 400px;
+}
+
+/* Badge */
+.mobile-hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+}
+
+/* Title */
+.mobile-hero-title {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.12;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Subtitle */
+.mobile-hero-subtitle {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.55;
+    margin: 0;
+    font-weight: 400;
+    max-width: 320px;
+}
+
+/* CTA Buttons */
+.mobile-hero-actions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.mobile-hero-btn {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-hero-btn.primary {
+    background: #fff;
+    color: #0d9488;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-hero-btn.primary:active {
+    transform: scale(0.96);
+}
+
+.mobile-hero-btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.mobile-hero-btn.secondary:active {
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Trust Badges */
+.mobile-hero-trust {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.mobile-hero-trust span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+/* ---- Small screens ---- */
+@media (max-width: 380px) {
+    .mobile-hero-title {
+        font-size: 2.1rem;
+    }
+
+    .mobile-hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-hero-btn {
+        width: 100%;
+        max-width: 240px;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .mobile-hero-trust {
+        gap: 10px;
+    }
+
+    .mobile-hero-trust span {
+        font-size: 0.7rem;
+    }
+}

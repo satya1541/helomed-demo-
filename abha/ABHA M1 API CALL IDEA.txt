@@ -1,0 +1,62 @@
+==========================================================
+ABHA MILESTONE 1: TECHNICAL INTEGRATION FLOW (FOR FRONTEND)
+==========================================================
+
+1. ABHA CREATION FLOW (REGISTRATION/Signup/Create)
+------------------------------------
+Step 1: Call [POST /generateAadhaarOtp]
+        - Input: Aadhaar Number
+        - Action: Move to OTP Screen
+
+Step 2: Call [POST /verifyAadharOtp]
+        - Input: OTP
+        - LOGIC: Check 'mobileVerified' in response
+          IF FALSE -> Redirect to Mobile Verify Screen (Call generateMobileOtp)
+          IF TRUE  -> Skip to Step 3
+
+Step 3: Call [POST /getAbhaAddressSuggestion]
+        - Action: Display selectable list of suggested IDs
+
+Step 4: Call [POST /setAbhaAddress]
+        - Action: Send user-selected address string
+
+Step 5: Call [POST /getUserDetails]
+        - Action: Final Profile Sync with Database
+
+Step 6: Call [POST /downloadAbhaCard]
+        - Action: Show Success Screen & Render Base64 Card
+
+
+2. LOGIN FLOWS (4 PATHWAYS)
+---------------------------
+A. Aadhaar 
+   - Step 1: getUserByAadhar 
+   - Step 2: verifyGetByAadhar 
+   - Step 3: getUserDetails -> downloadAbhaCard
+
+ B. ABHA Number (Standard)
+   - Step 1: getAbhaUserByAbhaNumber
+   - Step 2: verifyGetByAbhaNumber
+   - Step 3: getUserDetails -> downloadAbhaCard  
+
+C. Mobile Number (Multi-Account)
+   - Step 1: getUserByNumber
+   - Step 2: verifyGetByNumber
+   - Action: UI MUST show "Account List" from response
+   - Step 3: User Selects Profile -> verifyGetByNumberUser
+   - Step 4: getUserDetails -> downloadAbhaCard
+
+D. ABHA Address (PHR Flow)
+   - Step 1: getAbhaUserByAbhaAddress
+   - Step 2: verifyGetByAbhaAddress
+   - Step 3: abhaAddressUserDetails (PHR Sync)
+   - Step 4: getPhrAbhaCard (Download PHR Card)
+
+
+3. UI RULES (OTP & RESEND LOGIC)
+--------------------------------
+- TIMER: Show 60-second (1 min) countdown on every OTP screen.
+- ATTEMPTS: Total 3 attempts allowed (Initial + 2 Resends).
+- LOCKOUT: After 3rd failed attempt, show message: 
+  "Maximum attempts reached. Please try again after 30 minutes."
+==========================================================

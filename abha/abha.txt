@@ -1,0 +1,1221 @@
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+--- Page 10 ---
+10 | Page 
+ 
+ 
+ 
+ 
+4. Retrieve your account 
+  
+If a user has forgotten his/her ABHA (Health ID), it can be retrieved via  the following 
+two methods 
+ 
+● Through Aadhaar OTP 
+● Through Mobile OTP 
+ 
+ 
+Retrieve ABHA via Aadhaar OTP 
+To retrieve ABHA (Health ID), an OTP is sent on a registered mobile number and the 
+user's health ID is retrieved from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+--- Page 10 ---
+10 | Page 
+ 
+ 
+ 
+ 
+4. Retrieve your account 
+  
+If a user has forgotten his/her ABHA (Health ID), it can be retrieved via  the following 
+two methods 
+ 
+● Through Aadhaar OTP 
+● Through Mobile OTP 
+ 
+ 
+Retrieve ABHA via Aadhaar OTP 
+To retrieve ABHA (Health ID), an OTP is sent on a registered mobile number and the 
+user's health ID is retrieved from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 11 ---
+11 | Page 
+ 
+ 
+   
+Retrieve ABHA via Mobile OTP 
+To retrieve ABHA (Health ID), an OTP is sent on mobile number along with the user's 
+demographic detail .User's health ID is retrieved  from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+--- Page 10 ---
+10 | Page 
+ 
+ 
+ 
+ 
+4. Retrieve your account 
+  
+If a user has forgotten his/her ABHA (Health ID), it can be retrieved via  the following 
+two methods 
+ 
+● Through Aadhaar OTP 
+● Through Mobile OTP 
+ 
+ 
+Retrieve ABHA via Aadhaar OTP 
+To retrieve ABHA (Health ID), an OTP is sent on a registered mobile number and the 
+user's health ID is retrieved from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 11 ---
+11 | Page 
+ 
+ 
+   
+Retrieve ABHA via Mobile OTP 
+To retrieve ABHA (Health ID), an OTP is sent on mobile number along with the user's 
+demographic detail .User's health ID is retrieved  from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 12 ---
+12 | Page 
+ 
+ 
+ 
+ 
+5. User Profile  
+ 
+Get Profile 
+ 
+Endpoint: GET v1/account/profile 
+Request: Authentication token i s used in the header  for getting the profile detail for a 
+given user. 
+ 
+ 
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+--- Page 10 ---
+10 | Page 
+ 
+ 
+ 
+ 
+4. Retrieve your account 
+  
+If a user has forgotten his/her ABHA (Health ID), it can be retrieved via  the following 
+two methods 
+ 
+● Through Aadhaar OTP 
+● Through Mobile OTP 
+ 
+ 
+Retrieve ABHA via Aadhaar OTP 
+To retrieve ABHA (Health ID), an OTP is sent on a registered mobile number and the 
+user's health ID is retrieved from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 11 ---
+11 | Page 
+ 
+ 
+   
+Retrieve ABHA via Mobile OTP 
+To retrieve ABHA (Health ID), an OTP is sent on mobile number along with the user's 
+demographic detail .User's health ID is retrieved  from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 12 ---
+12 | Page 
+ 
+ 
+ 
+ 
+5. User Profile  
+ 
+Get Profile 
+ 
+Endpoint: GET v1/account/profile 
+Request: Authentication token i s used in the header  for getting the profile detail for a 
+given user. 
+ 
+ 
+
+--- Page 13 ---
+13 | Page 
+ 
+Response : 
+ 
+ 
+GET QR Code 
+ 
+Endpoint : GET v1/account/qrCode 
+Request: Authentication token is being used in the header  for getting the QR code in 
+Byte Array form. 
+ 
+ 
+EDIT Profile 
+ 
+a. Update E-mail 
+OTP will be sent to the provided e -mail address. OTP will be valid for 10 minute 
+only. To Update or Changes  the existing e-mail Address  (Verified/Unverified 
+email). Send the New Email Address required in the request. 
+   
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+--- Page 10 ---
+10 | Page 
+ 
+ 
+ 
+ 
+4. Retrieve your account 
+  
+If a user has forgotten his/her ABHA (Health ID), it can be retrieved via  the following 
+two methods 
+ 
+● Through Aadhaar OTP 
+● Through Mobile OTP 
+ 
+ 
+Retrieve ABHA via Aadhaar OTP 
+To retrieve ABHA (Health ID), an OTP is sent on a registered mobile number and the 
+user's health ID is retrieved from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 11 ---
+11 | Page 
+ 
+ 
+   
+Retrieve ABHA via Mobile OTP 
+To retrieve ABHA (Health ID), an OTP is sent on mobile number along with the user's 
+demographic detail .User's health ID is retrieved  from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 12 ---
+12 | Page 
+ 
+ 
+ 
+ 
+5. User Profile  
+ 
+Get Profile 
+ 
+Endpoint: GET v1/account/profile 
+Request: Authentication token i s used in the header  for getting the profile detail for a 
+given user. 
+ 
+ 
+
+--- Page 13 ---
+13 | Page 
+ 
+Response : 
+ 
+ 
+GET QR Code 
+ 
+Endpoint : GET v1/account/qrCode 
+Request: Authentication token is being used in the header  for getting the QR code in 
+Byte Array form. 
+ 
+ 
+EDIT Profile 
+ 
+a. Update E-mail 
+OTP will be sent to the provided e -mail address. OTP will be valid for 10 minute 
+only. To Update or Changes  the existing e-mail Address  (Verified/Unverified 
+email). Send the New Email Address required in the request. 
+   
+
+--- Page 14 ---
+14 | Page 
+ 
+ 
+ 
+EndPoint: /v2/account/email/verification/send/otp: Authentication token 
+has been used in header. E-mail address is sent in the request body. Transaction 
+ID is returned in the response. 
+ 
+ 
+Request: 
+ 
+Response : 
+ Transaction ID is returned. 
+ 
+Endpoint /v2/account/email/verification/verify/otp: 
+Transaction ID & encrypted OTP is passed in the requested body. An authentication 
+token is used in the header. OTP should be in the encrypted form. Status is returned in 
+the response body. 
+
+
+--- Page 6 ---
+6 | Page 
+ 
+ 
+b. Registration via Other Documents 
+Currently we support Driving License (DL) & PAN  for ABHA number generation, 
+apart from Aadhaar . ABDM plans to roll out other ID documents as well to 
+enable creation. The same will be communicated and updated in the 
+documentation as necessary. However, the integration flow will remain as the 
+DL/PAN flow.  
+To enable beneficiary registration using other documents, the user is requested 
+his/her mobile number to be linked with ABHA ( Health ID) Number. An OTP is 
+sent to the given mobile number and after verifying the OTP , demographic 
+information  of the user is  captured along with the driving license numbe r . 
+Following demographic details are expected from the end user 
+● Name 
+● Date of birth 
+● Gender 
+
+--- Page 7 ---
+7 | Page 
+ 
+The submitted demographic details are then matched against the  DL/PAN 
+database. ABHA system also checks the details against the existing ABHA 
+(Health ID) or Enrolment number database to prevent duplication.  
+Users are requested to upload scanned front and back images of their DL /PAN. 
+Post submission, an enrollment number is genera ted. Health care 
+workers/Facility Managers are expected to ensure that the submitted DL /PAN is 
+of the end user requesting creation of ABHA. They can ensure the same by 
+matching the picture in the uploaded document with the requesting person. 
+ 
+Please note, ABHA creation via Aadhaar is a one step process wherein, ABHA is 
+created instantaneously. However, in case of other ID documents, an enrollment 
+number is generated first which can only be converted to ABHA once a manual 
+verification of identity is complete.  
+ 
+ABHA (Health ID) created through Self mode via using Driving license/PAN, an 
+Enrolment number has been issued which can be verified at any facility centers. 
+ 
+The sequence of APIs used via other documents’  method is  shown in the 
+diagram below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 8 ---
+8 | Page 
+ 
+ 
+ 
+Note: ABDM will soon roll out features that will support ABHA (Health ID) creation with 
+other ID documents such as PAN card, Driving License, etc. in assisted mode at 
+participating health facilities. 
+ 
+2. Login with ABHA (Health ID)  
+When an ABHA (health ID) is created, the API confirms if the ABHA (Health ID) is valid 
+and also the authentication methods supported for the ABHA ( HealthID). The user can 
+choose an appropriate option to authenticate/Login the user.  
+ 
+To begin the process,  the Authentication  token public certificate API is called. This 
+certificate is also used to encrypt the data. Then the API checks if ABHA (Health ID) is 
+reserved/used which includes permanently deleted HIDs. Before using the method of 
+login, ensure *Initiate authentication* API has been called already for the given ABHA.  
+The following Authentication (Login) methods are supported . Client has to choose one 
+login method from below given methods. 
+2.1 Login with Aadhaar OTP 
+ 
+ An OTP is triggered with the Aadhaar linked mobile number of the patient. The patient 
+must provide the OTP to the user to complete the authentication 
+2.2 Login with Mobile OTP  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the Health ID. Th e 
+patient must share the OTP with the user for verification.  A token has been returned 
+and can be used for Profile APIs purpose.  
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+--- Page 9 ---
+9 | Page 
+ 
+ 
+ 
+3. Login to your ABHA using Mobile  
+Users will now be able to login to their ABHA using their Mobile Number. In case 
+multiple ABHA numbers are linked to a Mobile Number, users will be able to 
+choose the account they want to login to.  
+ 
+An OTP is sent to the patient’s mobile number that is linked with the ABHA. The 
+patient must share the OTP with the user for verification. A token has been 
+returned and can be used for Profile APIs purpose.  
+
+--- Page 10 ---
+10 | Page 
+ 
+ 
+ 
+ 
+4. Retrieve your account 
+  
+If a user has forgotten his/her ABHA (Health ID), it can be retrieved via  the following 
+two methods 
+ 
+● Through Aadhaar OTP 
+● Through Mobile OTP 
+ 
+ 
+Retrieve ABHA via Aadhaar OTP 
+To retrieve ABHA (Health ID), an OTP is sent on a registered mobile number and the 
+user's health ID is retrieved from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 11 ---
+11 | Page 
+ 
+ 
+   
+Retrieve ABHA via Mobile OTP 
+To retrieve ABHA (Health ID), an OTP is sent on mobile number along with the user's 
+demographic detail .User's health ID is retrieved  from the ABDM server. 
+The sequence of APIs used via this method is shown in the diagram below.  
+ 
+
+--- Page 12 ---
+12 | Page 
+ 
+ 
+ 
+ 
+5. User Profile  
+ 
+Get Profile 
+ 
+Endpoint: GET v1/account/profile 
+Request: Authentication token i s used in the header  for getting the profile detail for a 
+given user. 
+ 
+ 
+
+--- Page 13 ---
+13 | Page 
+ 
+Response : 
+ 
+ 
+GET QR Code 
+ 
+Endpoint : GET v1/account/qrCode 
+Request: Authentication token is being used in the header  for getting the QR code in 
+Byte Array form. 
+ 
+ 
+EDIT Profile 
+ 
+a. Update E-mail 
+OTP will be sent to the provided e -mail address. OTP will be valid for 10 minute 
+only. To Update or Changes  the existing e-mail Address  (Verified/Unverified 
+email). Send the New Email Address required in the request. 
+   
+
+--- Page 14 ---
+14 | Page 
+ 
+ 
+ 
+EndPoint: /v2/account/email/verification/send/otp: Authentication token 
+has been used in header. E-mail address is sent in the request body. Transaction 
+ID is returned in the response. 
+ 
+ 
+Request: 
+ 
+Response : 
+ Transaction ID is returned. 
+ 
+Endpoint /v2/account/email/verification/verify/otp: 
+Transaction ID & encrypted OTP is passed in the requested body. An authentication 
+token is used in the header. OTP should be in the encrypted form. Status is returned in 
+the response body. 
+
+--- Page 15 ---
+15 | Page 
+ 
+ 
+ 
+Response : 
+ 
+ 
+b. Update Mobile 
+Update Mobile via Aadhaar Otp 
+ 
+To update the mobile using Aadhaar OTP , a client ( Integrator) needs to 
+first generate Mobile OTP and verify it. Again generate Aadhaar 
+OTP and a transaction ID is returned. Auth token, OTP, old 
+password along with transaction ID  is passed in the requested 
+body and client is returned  with the status  of changed mobile 
+number. 
+ 
+ The sequence of APIs used via this method is  shown in the diagram 
+below.  
+
+

@@ -1,0 +1,268 @@
+.abha-landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f8fafc;
+    padding-top: 118px;
+}
+
+.abha-landing-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    flex: 1;
+}
+
+.abha-landing-hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.abha-landing-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.abha-landing-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary, #64748b);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.abha-landing-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.abha-simple-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.abha-simple-card:hover:not(.abha-card-disabled) {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.abha-card-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Ribbon Badge */
+.abha-ribbon-badge {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+    background: #1e40af;
+    color: white;
+    padding: 0.5rem 3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 6px rgba(30, 64, 175, 0.3);
+    z-index: 10;
+}
+
+.abha-card-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.abha-dl-icon {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.abha-card-text {
+    font-size: 1rem;
+    color: var(--text-primary, #1e293b);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+}
+
+.abha-card-method {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ea580c;
+}
+
+.abha-login-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.abha-login-link p {
+    font-size: 1rem;
+    color: var(--text-primary, #1e293b);
+    margin: 0;
+}
+
+.abha-link {
+    color: #ea580c;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.abha-link:hover {
+    text-decoration: underline;
+    color: #c2410c;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .abha-landing-page {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .abha-landing-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .abha-landing-title {
+        font-size: 1.75rem;
+    }
+    
+    .abha-landing-container {
+        padding: 3rem 1.5rem;
+    }
+
+    .abha-simple-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .abha-card-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .abha-dl-icon {
+        font-size: 4rem;
+    }
+
+    .abha-ribbon-badge {
+        font-size: 0.65rem;
+        padding: 0.4rem 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .abha-landing-title {
+        font-size: 1.5rem;
+    }
+    
+    .abha-landing-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .abha-simple-card {
+        padding: 2rem 1.25rem;
+    }
+    
+    .abha-card-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .abha-dl-icon {
+        font-size: 3.5rem;
+    }
+
+    .abha-card-text {
+        font-size: 0.95rem;
+    }
+
+    .abha-card-method {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .abha-landing-container {
+        padding: 2rem 1rem;
+    }
+
+    .abha-landing-hero {
+        margin-bottom: 2rem;
+    }
+
+    .abha-landing-title {
+        font-size: 1.35rem;
+    }
+
+    .abha-landing-subtitle {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+
+    .abha-landing-cards {
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .abha-simple-card {
+        padding: 1.75rem 1rem;
+    }
+
+    .abha-card-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .abha-dl-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .abha-card-text {
+        font-size: 0.875rem;
+    }
+
+    .abha-card-method {
+        font-size: 0.95rem;
+    }
+
+    .abha-login-link p {
+        font-size: 0.9rem;
+    }
+
+    .abha-ribbon-badge {
+        font-size: 0.6rem;
+        padding: 0.35rem 2.25rem;
+        top: 12px;
+        right: -32px;
+    }
+}

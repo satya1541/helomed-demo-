@@ -1,0 +1,185 @@
+/* ──── Offers Page ──── */
+.off-page {
+    min-height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.off-wrapper {
+    flex: 1;
+    padding-top: 120px;
+    width: min(var(--container-max), calc(100% - 2rem));
+    margin-inline: auto;
+    padding-bottom: 2rem;
+}
+
+.off-page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+    flex-wrap: wrap;
+}
+
+.off-page-title h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.off-count-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.off-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+}
+
+/* Grid */
+.off-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.off-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+}
+
+.off-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ofc-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.15rem 1.15rem 0;
+    flex-shrink: 0;
+}
+
+.ofc-body {
+    padding: 0.75rem 1.15rem;
+    flex: 1;
+}
+
+.ofc-body h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.ofc-body p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.ofc-footer {
+    padding: 0.75rem 1.15rem;
+    border-top: 1px solid #f0f0f0;
+    background: #fcfcfc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.ofc-code-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ofc-code {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    background: var(--background-color);
+    border: 1px dashed var(--border-color);
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+    font-family: monospace;
+}
+
+.ofc-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0.3rem 0.55rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: #fff;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ofc-copy:hover {
+    background: #f5f5f5;
+}
+
+.ofc-copy.copied {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-color: #a5d6a7;
+}
+
+.ofc-shop {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.ofc-shop:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .off-wrapper {
+        padding-top: 96px;
+        width: calc(100% - 1rem);
+    }
+
+    .off-page-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .off-grid {
+        grid-template-columns: 1fr;
+    }
+}

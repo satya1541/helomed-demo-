@@ -1,0 +1,1279 @@
+/* src/pages/AbhaWizardPage.css */
+
+.abha-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color, #f4f6f8);
+}
+
+.abha-wrapper {
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+}
+
+.abha-wrapper.wide-wrapper {
+    max-width: 1000px;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+/* ------------------------------------- */
+/* HOME MODE */
+/* ------------------------------------- */
+
+.abha-home-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.abha-page-title-centered {
+    color: var(--primary-color, #2563eb);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.abha-subtitle {
+    text-align: center;
+    color: var(--text-secondary, #64748b);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.abha-creation-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+    .abha-creation-options {
+        flex-direction: column;
+    }
+}
+
+.abha-option-card {
+    background: var(--surface-color, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.abha-option-card:hover {
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+    border-color: var(--primary-color, #2563eb);
+    transform: translateY(-2px);
+}
+
+.abha-option-logo {
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.abha-option-card p {
+    color: var(--text-primary, #1e293b);
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.abha-highlight-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.abha-highlight-text.orange {
+    color: #e05e26;
+    /* Matched to screenshot orange */
+}
+
+.abha-login-prompt-home {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1e293b);
+    margin-top: 1rem;
+}
+
+/* ------------------------------------- */
+/* HOME SPLIT LAYOUT */
+/* ------------------------------------- */
+
+.abha-home-split {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.abha-split-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: stretch;
+}
+
+.abha-split-section {
+    background: var(--surface-color, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.abha-split-header {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.abha-split-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color, #2563eb);
+    margin: 0 0 0.4rem 0;
+}
+
+.abha-split-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #64748b);
+    margin: 0;
+}
+
+/* Left Side - Registration */
+.abha-register-section {
+    border-top: 4px solid #e05e26;
+}
+
+.abha-compact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.75rem 1rem;
+    background: #fff8f3;
+    border: 2px dashed #e05e26;
+    border-radius: var(--radius-md, 0.5rem);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.abha-compact-card:hover {
+    background: #fff0e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 94, 38, 0.15);
+}
+
+.abha-compact-logo {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.abha-card-text {
+    font-size: 0.95rem;
+    color: var(--text-primary, #1e293b);
+    margin: 0.35rem 0 0.2rem 0;
+    font-weight: 500;
+}
+
+.abha-card-highlight {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #e05e26;
+}
+
+.abha-btn-primary-split {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background: #e05e26;
+    color: white;
+    border: none;
+    border-radius: var(--radius-md, 0.5rem);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.abha-btn-primary-split:hover {
+    background: #c74d1f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(224, 94, 38, 0.3);
+}
+
+/* Divider */
+.abha-split-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.abha-split-divider::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--border-color, #e2e8f0) 20%, var(--border-color, #e2e8f0) 80%, transparent);
+}
+
+.abha-split-divider span {
+    background: var(--background-color, #f4f6f8);
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    border: 2px solid var(--border-color, #e2e8f0);
+    font-weight: 600;
+    color: var(--text-secondary, #64748b);
+    font-size: 0.85rem;
+    z-index: 1;
+}
+
+/* Right Side - Login */
+.abha-login-section {
+    border-top: 4px solid #2563eb;
+}
+
+.abha-login-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex: 1;
+    align-content: center;
+}
+
+.abha-login-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem 0.75rem;
+    background: #f8fafc;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.abha-login-option:hover {
+    background: #eff6ff;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.abha-login-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.abha-login-option span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary, #1e293b);
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+    .abha-split-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .abha-split-divider {
+        display: none;
+    }
+    
+    .abha-login-options {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .abha-split-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .abha-compact-logo {
+        height: 80px;
+        width: 80px;
+    }
+    
+    .abha-login-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .abha-page-title-centered {
+        font-size: 1.25rem;
+    }
+    
+    .abha-split-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ------------------------------------- */
+/* LOGIN MODE */
+/* ------------------------------------- */
+
+.abha-login-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.abha-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary, #1e293b);
+    margin-bottom: 1rem;
+}
+
+.abha-tabs {
+    display: flex;
+    background: #f8fafc;
+    padding: 0;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.abha-tab {
+    flex: 1;
+    max-width: 250px;
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary, #64748b);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    border-right: 1px solid var(--border-color, #e2e8f0);
+}
+
+.abha-tab.active {
+    color: var(--primary-color, #2563eb);
+    border-bottom-color: var(--primary-color, #2563eb);
+    background: var(--surface-color, #ffffff);
+}
+
+.abha-tab-content {
+    background: var(--surface-color, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-top: none;
+    border-radius: 0 0 var(--radius-lg, 0.75rem) var(--radius-lg, 0.75rem);
+    padding: 2rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.abha-footer-links {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: var(--border-color, #e2e8f0);
+    /* Uses border color for the pipe separator */
+}
+
+/* ------------------------------------- */
+/* FLOW CONTAINER (AADHAAR & DL) */
+/* ------------------------------------- */
+
+.abha-flow-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: transparent;
+}
+
+.relative-container {
+    position: relative;
+}
+
+.abha-flow-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.abha-flow-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #1e293b);
+    margin: 0;
+}
+
+.abha-step-counter {
+    color: var(--primary-color, #2563eb);
+    font-weight: 600;
+}
+
+.abha-flow-stepper {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-bottom: none;
+    border-radius: var(--radius-lg, 0.75rem) var(--radius-lg, 0.75rem) 0 0;
+    overflow: hidden;
+}
+
+.abha-flow-step {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary, #64748b);
+    border-bottom: 3px solid #f1f5f9;
+    border-right: 1px solid var(--border-color, #e2e8f0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.abha-flow-step:last-child {
+    border-right: none;
+}
+
+.abha-flow-step .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #64748b;
+    font-size: 0.75rem;
+}
+
+.abha-flow-step.active {
+    color: var(--text-primary, #1e293b);
+    border-bottom-color: var(--primary-color, #2563eb);
+}
+
+.abha-flow-step.active .step-num {
+    background: var(--primary-color, #2563eb);
+    color: #ffffff;
+}
+
+.abha-flow-step.completed {
+    border-bottom-color: var(--border-color, #e2e8f0);
+}
+
+.abha-flow-content {
+    background: var(--surface-color, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 0 0 var(--radius-lg, 0.75rem) var(--radius-lg, 0.75rem);
+    padding: 2rem;
+    min-height: 400px;
+}
+
+/* ------------------------------------- */
+/* FORM ELEMENTS */
+/* ------------------------------------- */
+
+.abha-form-row {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.abha-form-row>label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary, #1e293b);
+}
+
+.abha-form-row>label::after {
+    content: '*';
+    color: #ef4444;
+    /* red */
+    margin-left: 2px;
+}
+
+.abha-input-with-prefix {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.abha-prefix {
+    background: #f1f5f9;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary, #64748b);
+    border-right: 1px solid var(--border-color, #e2e8f0);
+    font-weight: 500;
+}
+
+.abha-input-with-prefix input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.abha-aadhaar-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.abha-aadhaar-inputs input {
+    width: 80px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.abha-aadhaar-inputs input:focus {
+    border-color: var(--primary-color, #2563eb);
+}
+
+.abha-info-text {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+.abha-info-text.text-purple {
+    color: #6366f1;
+    /* Indigo/Purple similar to screenshot */
+}
+
+.text-secondary {
+    color: var(--text-secondary, #64748b);
+}
+
+.text-orange {
+    color: #e05e26;
+    font-weight: 600;
+}
+
+.abha-terms-box {
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.abha-terms-box h4 {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.abha-terms-text {
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.abha-agree-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    background: #f8fafc;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.abha-select {
+    max-width: 400px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    font-size: 1rem;
+    outline: none;
+    background-color: white;
+}
+
+.abha-captcha-row {
+    max-width: 400px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    padding: 1rem;
+}
+
+.abha-captcha-row>label,
+.form-row-captcha>label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.abha-captcha-row>label::after,
+.form-row-captcha>label::after {
+    content: '*';
+    color: #ef4444;
+}
+
+.abha-captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.abha-captcha-image {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #7c3aed;
+    /* Random stylized color */
+    letter-spacing: 2px;
+    user-select: none;
+    min-width: 70px;
+}
+
+.purple-italic {
+    color: #4c1d95;
+    font-style: italic;
+}
+
+.abha-captcha-box input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    outline: none;
+}
+
+.abha-icon-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color, #2563eb);
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.abha-icon-btn:hover {
+    color: #1e40af;
+}
+
+/* ------------------------------------- */
+/* BUTTONS & ACTIONS */
+/* ------------------------------------- */
+
+.abha-text-btn {
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.abha-text-btn.orange {
+    color: #e05e26;
+}
+
+.abha-text-btn:hover {
+    opacity: 0.8;
+}
+
+.abha-btn-orange {
+    background: #e05e26;
+    color: white;
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: var(--radius-md, 0.5rem);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.abha-btn-orange:hover:not(:disabled) {
+    background: #d04d15;
+}
+
+.abha-btn-orange:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.abha-btn-gray {
+    background: #e2e8f0;
+    color: var(--text-primary);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: var(--radius-md, 0.5rem);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.abha-btn-gray:hover {
+    background: #cbd5e1;
+}
+
+.abha-form-actions-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.abha-form-actions-split {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* ------------------------------------- */
+/* MODALS */
+/* ------------------------------------- */
+
+.abha-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    border-radius: 0 0 var(--radius-lg, 0.75rem) var(--radius-lg, 0.75rem);
+}
+
+.abha-alert-modal {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg, 0.75rem);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 90%;
+}
+
+.abha-alert-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.abha-alert-list {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.5rem;
+    color: #4c1d95;
+    /* Indigo tone from screenshot */
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.abha-alert-list li {
+    margin-bottom: 0.75rem;
+}
+
+.abha-alert-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.abha-placeholder-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+}
+
+/* ------------------------------------- */
+/* NEW ABHA COMPONENTS */
+/* ------------------------------------- */
+
+/* OTP Max Attempts */
+.otp-max-attempts {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Address Selection */
+.abha-address-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.abha-address-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 8px);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.abha-address-option:hover,
+.abha-address-option:has(input:checked) {
+    border-color: var(--primary-color, #2563eb);
+    background: var(--accent-color, #f0f9ff);
+}
+
+.abha-address-option input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.abha-address-option span {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Account Selection */
+.abha-account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.abha-account-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 8px);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.abha-account-option:hover,
+.abha-account-option:has(input:checked) {
+    border-color: var(--primary-color, #2563eb);
+    background: var(--accent-color, #f0f9ff);
+}
+
+.abha-account-option input[type="radio"] {
+    margin-top: 0.25rem;
+    cursor: pointer;
+}
+
+.abha-account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.abha-account-info strong {
+    font-size: 1.05rem;
+    color: var(--text-primary, #1e293b);
+}
+
+.abha-account-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #64748b);
+}
+
+/* Loading Pane */
+.abha-loading-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    gap: 1.5rem;
+}
+
+.abha-loading-pane p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.abha-loader {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--border-color, #e2e8f0);
+    border-top-color: var(--primary-color, #2563eb);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success Screen */
+.abha-success-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.abha-success-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.abha-success-header h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin: 1rem 0 0.5rem;
+}
+
+.abha-success-header p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.abha-success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.abha-profile-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    box-shadow: var(--shadow-soft);
+}
+
+.abha-profile-header {
+    margin-bottom: 1.5rem;
+}
+
+.abha-profile-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.abha-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.abha-profile-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.abha-profile-item svg {
+    color: var(--primary-color, #2563eb);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.abha-profile-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.abha-profile-item label {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #64748b);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.abha-profile-item span {
+    font-size: 1rem;
+    color: var(--text-primary, #1e293b);
+    font-weight: 600;
+}
+
+/* ABHA Card Preview */
+.abha-card-preview {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color, #e2e8f0);
+    box-shadow: var(--shadow-soft);
+}
+
+.abha-card-preview h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0 0 1.5rem;
+}
+
+.abha-card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md, 8px);
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.abha-btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color, #2563eb);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.abha-btn-download:hover {
+    background: var(--primary-dark, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.abha-success-actions {
+    text-align: center;
+}
+
+/* Back Button */
+.abha-back-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s;
+    font-weight: 600;
+}
+
+.abha-back-btn:hover {
+    color: var(--primary-color, #2563eb);
+}
+
+/* Option Icon for Login */
+.abha-option-icon {
+    color: var(--primary-color, #2563eb);
+    margin-bottom: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .abha-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .abha-tab {
+        flex: 1 1 45%;
+        font-size: 0.85rem;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .abha-profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .otp-boxes {
+        gap: 0.4rem;
+    }
+    
+    .otp-box {
+        width: 42px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+    
+    .abha-success-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .abha-profile-card,
+    .abha-card-preview {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .abha-tabs {
+        gap: 0.5rem;
+    }
+    
+    .abha-tab {
+        flex: 1 1 100%;
+    }
+    
+    .abha-profile-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------------- */
+/* OTP AUTHENTICATION STEP               */
+/* ------------------------------------- */
+
+.otp-step-pane {
+    max-width: 600px;
+}
+
+.otp-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.35rem 0;
+}
+
+.otp-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem 0;
+}
+
+.otp-boxes {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.otp-box {
+    width: 48px;
+    height: 52px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-color, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+.otp-box:focus {
+    border-color: var(--primary-color, #2563eb);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.otp-resend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.otp-didnt {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.otp-resend-btn {
+    background: none;
+    border: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary-color, #2563eb);
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s;
+}
+
+.otp-resend-btn.disabled {
+    color: var(--text-muted, #94a3b8);
+    cursor: default;
+}
+
+.otp-timer {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.otp-mobile-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}

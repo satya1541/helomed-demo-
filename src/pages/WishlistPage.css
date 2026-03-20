@@ -1,0 +1,121 @@
+/* ──── Wishlist Page ──── */
+.wl-page {
+    min-height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.wl-wrapper {
+    flex: 1;
+    padding-top: 120px;
+    width: min(var(--container-max), calc(100% - 2rem));
+    margin-inline: auto;
+    padding-bottom: 2rem;
+}
+
+.wl-page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+    flex-wrap: wrap;
+}
+
+.wl-page-title h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.wl-count-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    background: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.wl-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    gap: 0.75rem;
+    color: var(--text-muted);
+}
+
+.wl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1rem;
+}
+
+.wl-empty {
+    text-align: center;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 4rem 1.5rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.wl-empty-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(27, 82, 133, 0.08);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.wl-empty h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+}
+
+.wl-empty p {
+    margin: 0 0 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+}
+
+.wl-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wl-explore-btn:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .wl-wrapper {
+        padding-top: 96px;
+        width: calc(100% - 1rem);
+    }
+
+    .wl-page-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .wl-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}

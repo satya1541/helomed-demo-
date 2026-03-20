@@ -1,0 +1,433 @@
+/* 1mg-Inspired Login/Signup Styles */
+* {
+    box-sizing: border-box;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
+    /* Light gray background */
+    padding: 2.5rem 1.5rem;
+    font-family: var(--font-body);
+    transition: background 0.4s ease;
+}
+
+/* ─── Role-Based Theme Colors ─── */
+.login-page[data-theme="retailer"] {
+    --primary-color: #0d9488;
+    --primary-dark: #0f766e;
+    --accent-color: #f0fdfa;
+    background: #f5faf9;
+}
+
+.login-page[data-theme="user"] {
+    --primary-color: #1B5285;
+    --primary-dark: #143f66;
+    --accent-color: #eef4fa;
+}
+
+/* Smooth transitions for themed elements */
+.login-page .login-btn,
+.login-page .role-btn,
+.login-page .link,
+.login-page .geo-btn,
+.login-page .error-message,
+.login-page .resend-btn,
+.login-page .change-number-btn {
+    transition: all 0.4s ease;
+}
+
+.login-page .login-container {
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.login-page[data-theme="retailer"] .login-container {
+    border-color: #d1e7e5;
+    box-shadow: 0 4px 16px rgba(13, 148, 136, 0.06);
+}
+
+.login-page[data-theme="retailer"] .role-btn.active {
+    color: #0d9488;
+}
+
+.login-page[data-theme="retailer"] .role-btn:not(.active):hover {
+    color: #0d9488;
+}
+
+
+.login-container {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    /* Sharper corners like 1mg */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid #e0e0e0;
+}
+
+.login-logo-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-logo {
+    height: 48px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.login-logo-section h1 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.login-logo-section p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Role Switcher */
+.role-toggle,
+.role-switcher {
+    display: flex;
+    background: #f5f5f5;
+    padding: 4px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    border: 1px solid #e0e0e0;
+}
+
+.role-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.role-btn.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+.role-btn:not(.active):hover {
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.form-group-addr input,
+.form-group input,
+.form-group select {
+    padding: 0.8rem 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: white;
+    color: var(--text-primary);
+    width: 100%;
+    min-width: 0;
+}
+
+
+.form-group input::placeholder {
+    color: #9e9e9e;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.signup-address-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+/* Google Address Search Wrapper */
+.google-address-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    background: #f8f9fa;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.google-address-input-wrapper.focused {
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.search-icon-wrapper {
+    padding: 0.8rem 0.6rem 0.8rem 1rem;
+    color: #9e9e9e;
+    display: flex;
+    align-items: flex-start;
+}
+
+.google-address-input-wrapper.focused .search-icon-wrapper {
+    color: var(--primary-color);
+}
+
+.address-textarea-inner {
+    flex: 1;
+    padding: 0.8rem 0.8rem 0.8rem 0;
+    border: none !important;
+    background: transparent !important;
+    font-size: 1rem;
+    outline: none !important;
+    font-family: inherit;
+    color: var(--text-primary);
+    width: 100%;
+    height: 3rem;
+}
+
+
+.clear-search-btn {
+    background: none;
+    border: none;
+    padding: 0.8rem 1rem;
+    color: #9e9e9e;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    transition: color 0.2s;
+}
+
+.clear-search-btn:hover {
+    color: var(--primary-color);
+}
+
+.signup-address-input {
+    /* The wrapper already handles the main styles */
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+/* Phone Input */
+.phone-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: white;
+    overflow: hidden;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.phone-input-wrapper:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.country-code {
+    background: #f5f5f5;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 0.8rem 1rem;
+    border-right: 1px solid #dcdcdc;
+    font-size: 0.95rem;
+}
+
+.phone-input-wrapper input {
+    border: none !important;
+    background: transparent !important;
+    padding: 0.8rem 1rem !important;
+    width: 100%;
+    box-shadow: none !important;
+}
+
+/* Helper Text */
+.helper-text {
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.login-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+}
+
+.login-btn:disabled {
+    background: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    background: var(--accent-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+}
+
+/* Geo Button */
+.geo-btn {
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+}
+
+.geo-btn:hover {
+    background: rgba(27, 82, 133, 0.05);
+    /* Tint of blue */
+}
+
+.form-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.link {
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.otp-input {
+    text-align: center;
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.login-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.resend-btn,
+.change-number-btn {
+    flex: 1;
+    background: white;
+    border: 1px solid #dcdcdc;
+    color: var(--text-secondary);
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resend-btn:hover,
+.change-number-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 2rem 1.5rem;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+    }
+
+    .login-page {
+        background: white;
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .login-logo-section {
+        margin-top: 2rem;
+    }
+}

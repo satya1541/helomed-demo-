@@ -1,0 +1,1 @@
+git pull &&  npm i -f && npm run build && pm2 restart 1 && systemctl reload nginx.service && pm2 log 1

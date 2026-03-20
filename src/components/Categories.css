@@ -1,0 +1,124 @@
+.categories-section-modern {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.category-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.section-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section-tag-new {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+}
+
+.section-title-modern {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.view-all-text-btn {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.view-all-text-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.categories-list-premium {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+.cat-card-premium {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cat-image-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Consistent shadow */
+    border: 2px solid transparent;
+    /* Potential hover state border */
+}
+
+.cat-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    /* Give it some breathing room if they are transparent icons */
+    /* If they are full photos, remove padding. Let's start with scale-down + padding as safe bet */
+}
+
+/* Hover Effect */
+.cat-card-premium:hover .cat-image-wrapper {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-color);
+    /* Subtle border on hover using primary color */
+}
+
+.cat-name-modern {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .categories-list-premium {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-title-modern {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .categories-list-premium {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .cat-icon-outer {
+        width: 70px;
+        height: 70px;
+    }
+}
